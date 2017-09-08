@@ -15,11 +15,16 @@ public class Player extends Stat{
 		System.out.print("Pw : ");
 		pw = in.nextLine();
 		
+		System.out.println();
+		
 		System.out.println("Your ID is '" + id + "'");
 		System.out.println("Your PW is '" + pw + "'");
+		
+		System.out.println();
+		
 		super.lv = 1;
 		super.hp = 10;
-		super.att = 1;
+		super.att = 10;
 	}
 	
 	public int getHp()
@@ -40,5 +45,15 @@ public class Player extends Stat{
 	public void setAtt(int att)
 	{
 		super.att = att;
+	}
+	
+	public int getExp()
+	{
+		return super.exp;
+	}
+	
+	public void setExp(int exp)
+	{
+		super.exp = exp;
 	}
 }
