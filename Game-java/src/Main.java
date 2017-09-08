@@ -11,11 +11,22 @@ public class Main {
 		
 		player.join();
 		
-		int m_lv = 1;
-		boolean hunt = monster[m_lv].hunt(player);
+		player.login();
 		
-		if(hunt == true)
+		while(true)
 		{
+			System.out.println("== Menu ==");
+			System.out.println("1. Hunt");
+			System.out.println("2. Stat");
+			System.out.println("3.Reinforcement");
+			System.out.println("Exit");
+			
+			int m_lv = 1;
+			boolean hunt = monster[m_lv].hunt(player);
+			
+			if(hunt == true)
+			{
+			}
 		}
 	}
 }
