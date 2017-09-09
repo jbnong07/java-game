@@ -1,8 +1,10 @@
 
 public class Main {
 	
-	private static Player player = new Player();
+	private static Player player = Player.getIns();
 	private static Monster[] monster = new Monster[5];
+	private static Menu menu = new Menu();
+	private static Getting getting = new Getting();
 	
 	public static void main(String args[])
 	{
@@ -15,17 +17,35 @@ public class Main {
 		
 		while(true)
 		{
-			System.out.println("== Menu ==");
-			System.out.println("1. Hunt");
-			System.out.println("2. Stat");
-			System.out.println("3.Reinforcement");
-			System.out.println("Exit");
-			
-			int m_lv = 1;
-			boolean hunt = monster[m_lv].hunt(player);
-			
-			if(hunt == true)
+			int menu_num = menu.menu_4("Hunt", "Stat", "Reinforcement", "Exit");
+						
+			if(menu_num == 1)
 			{
+				
+				int m_lv = monster[0].mobLv();
+				
+				boolean hunt = monster[m_lv].hunt(player);
+				
+				if(hunt == true)
+				{
+					int get_exp = monster[m_lv].getExp();
+					getting.exp(get_exp, player);
+				}
+			}
+			
+			else if(menu_num == 2)
+			{
+				
+			}
+			
+			else if(menu_num == 3)
+			{
+				
+			}
+			
+			else if(menu_num == 4)
+			{
+				break;
 			}
 		}
 	}
