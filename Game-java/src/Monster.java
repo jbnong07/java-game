@@ -24,7 +24,7 @@ public class Monster extends Stat{
 		in.nextLine();
 		System.out.println();
 		
-		return mob_lv;
+		return mob_lv-1;
 	}
 	
 	public boolean hunt(Player player)
@@ -58,6 +58,7 @@ public class Monster extends Stat{
 				{
 					System.out.println("Monster dead");
 					System.out.println("You win!!");
+					System.out.println();
 					return true;
 				}
 				
@@ -65,6 +66,7 @@ public class Monster extends Stat{
 				{
 					System.out.println("Your hp is 0");
 					System.out.println("You lose..");
+					System.out.println();
 					return false;
 				}
 			}

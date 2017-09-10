@@ -42,11 +42,17 @@ public class Main {
 						}
 					}
 					
+					else if(hunt == false)
+					{
+						int lose_exp = monster[m_lv].getExp();
+						getting.loseExp(lose_exp);
+					}
+					
 					int menu_ans = menu.retry();
 					
 					if(menu_ans == 1)
 					{
-						break menu1;
+						continue menu1;
 					}
 					
 					else 

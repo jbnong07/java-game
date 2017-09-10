@@ -43,6 +43,8 @@ public class Menu {
 		int ans = in.nextInt();
 		in.nextLine();
 		
+		System.out.println();
+		
 		return ans;
 	}
 }
