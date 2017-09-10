@@ -5,6 +5,7 @@ public class Main {
 	private static Monster[] monster = new Monster[5];
 	private static Menu menu = new Menu();
 	private static Getting getting = new Getting();
+	private static LvUp lvup = new LvUp();
 	
 	public static void main(String args[])
 	{
@@ -21,15 +22,37 @@ public class Main {
 						
 			if(menu_num == 1)
 			{
-				
-				int m_lv = monster[0].mobLv();
-				
-				boolean hunt = monster[m_lv].hunt(player);
-				
-				if(hunt == true)
+				menu1:
+				while(true)
 				{
-					int get_exp = monster[m_lv].getExp();
-					getting.getExp(get_exp);
+					int m_lv = monster[0].mobLv();
+					
+					boolean hunt = monster[m_lv].hunt(player);
+					
+					if(hunt == true)
+					{
+						int get_exp = monster[m_lv].getExp();
+						getting.getExp(get_exp);
+						
+						boolean lv_up = lvup.checkLvUp();
+						
+						if(lv_up == true)
+						{
+							lvup.lvUp();
+						}
+					}
+					
+					int menu_ans = menu.retry();
+					
+					if(menu_ans == 1)
+					{
+						break menu1;
+					}
+					
+					else 
+					{
+						break;
+					}
 				}
 			}
 			

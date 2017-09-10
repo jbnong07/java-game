@@ -82,6 +82,18 @@ public class Player extends Stat{
 		}
 	}
 	
+	public int lvExp(int lv)
+	{
+		int[] lv_exp = new int[100];
+		
+		for(int i = 0 ; i < 100 ; i++)
+		{
+			lv_exp[i] = i * 10 + (i / 10 * 100);
+		}
+		
+		return lv_exp[lv];
+	}
+	
 	public int getHp()
 	{
 		return super.hp;
@@ -100,6 +112,16 @@ public class Player extends Stat{
 	public void setAtt(int att)
 	{
 		super.att = att;
+	}
+	
+	public int getLv()
+	{
+		return super.lv;
+	}
+	
+	public void setLv(int lv)
+	{
+		super.lv = lv;
 	}
 	
 	public int getExp()
