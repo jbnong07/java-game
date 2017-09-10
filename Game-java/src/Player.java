@@ -2,10 +2,7 @@ import java.util.Scanner;
 
 public class Player extends Stat{
 	
-	private Player()
-	{
-		
-	}
+	private Player(){}
 	
 	private static Player player = new Player();
 	

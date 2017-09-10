@@ -1,7 +1,11 @@
 
 public class Getting {
-	public void exp(int m_exp, Player player)
+	private static Player player = Player.getIns();
+	
+	public void getExp(int m_exp)
 	{
+		System.out.println("You get " + m_exp + " exp");
+		player.setExp(m_exp);
 		
 	}
 }

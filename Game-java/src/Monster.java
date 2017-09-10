@@ -16,6 +16,17 @@ public class Monster extends Stat{
 		this.name = name;
 	}
 	
+	public int mobLv()
+	{
+		System.out.println("Choose monster lv[1 ~ 10]");
+		System.out.print("ans : ");
+		int mob_lv = in.nextInt();
+		in.nextLine();
+		System.out.println();
+		
+		return mob_lv;
+	}
+	
 	public boolean hunt(Player player)
 	{
 		int p_hp = player.getHp();

@@ -29,7 +29,7 @@ public class Main {
 				if(hunt == true)
 				{
 					int get_exp = monster[m_lv].getExp();
-					getting.exp(get_exp, player);
+					getting.getExp(get_exp);
 				}
 			}
 			
