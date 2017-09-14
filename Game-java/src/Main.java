@@ -6,6 +6,7 @@ public class Main {
 	private static Menu menu = new Menu();
 	private static Getting getting = new Getting();
 	private static LvUp lvup = new LvUp();
+	private static Mine mine = new Mine();
 	
 	public static void main(String args[])
 	{
@@ -18,7 +19,7 @@ public class Main {
 		
 		while(true)
 		{
-			int menu_num = menu.menu_4("Hunt", "Stat", "Reinforcement", "Exit");
+			int menu_num = menu.menu_5("Hunt", "Mine", "Stat", "Reinforcement", "Exit");
 						
 			if(menu_num == 1)
 			{
@@ -64,7 +65,7 @@ public class Main {
 			
 			else if(menu_num == 2)
 			{
-				
+				mine.mine();
 			}
 			
 			else if(menu_num == 3)
@@ -74,7 +75,18 @@ public class Main {
 			
 			else if(menu_num == 4)
 			{
+				
+			}
+			
+			else if(menu_num == 5)
+			{
 				break;
+			}
+			
+			else
+			{
+				System.out.println("Select in menu");
+				continue;
 			}
 		}
 	}
