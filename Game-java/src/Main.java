@@ -1,7 +1,7 @@
 
 public class Main {
 	
-	private static Player player = Player.getIns();
+	private static Player player = new Player();
 	private static Monster[] monster = new Monster[5];
 	private static Menu menu = new Menu();
 	private static Getting getting = new Getting();
@@ -33,20 +33,20 @@ public class Main {
 					if(hunt == true)
 					{
 						int get_exp = monster[m_lv].getExp();
-						getting.getExp(get_exp);
+						getting.getExp(get_exp, player);
 						
-						boolean lv_up = lvup.checkLvUp();
+						boolean lv_up = lvup.checkLvUp(player);
 						
 						if(lv_up == true)
 						{
-							lvup.lvUp();
+							lvup.lvUp(player);
 						}
 					}
 					
 					else if(hunt == false)
 					{
 						int lose_exp = monster[m_lv].getExp();
-						getting.loseExp(lose_exp);
+						getting.loseExp(lose_exp, player);
 					}
 					
 					int menu_ans = menu.retry();
@@ -61,11 +61,27 @@ public class Main {
 						break;
 					}
 				}
-			}
+			} //Hunt end
 			
 			else if(menu_num == 2)
 			{
-				mine.mine();
+				menu2:
+				while(true)
+				{
+					getting.getGold(mine.mine(), player);
+					
+					int menu_ans = menu.retry();
+					
+					if(menu_ans == 1)
+					{
+						continue menu2;
+					}
+					
+					else 
+					{
+						break;
+					}
+				}
 			}
 			
 			else if(menu_num == 3)

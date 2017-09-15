@@ -1,8 +1,7 @@
 
 public class Getting {
-	private static Player player = Player.getIns();
 	
-	public void getExp(int m_exp)
+	public void getExp(int m_exp, Player player)
 	{
 		System.out.println("You get " + m_exp + " exp");
 		player.setExp(m_exp);
@@ -10,7 +9,7 @@ public class Getting {
 		
 	}
 	
-	public void loseExp(int m_exp)
+	public void loseExp(int m_exp, Player player)
 	{
 		System.out.println("You lose " + m_exp + "exp");
 		player.setExp(-1 * m_exp);
@@ -21,5 +20,14 @@ public class Getting {
 		}
 		
 		System.out.println();
+	}
+	
+	public void getGold(int gold, Player player)
+	{
+		System.out.println("You get " + gold + "gold");
+		player.setGold(gold);
+		
+		System.out.println(2);
+		
 	}
 }

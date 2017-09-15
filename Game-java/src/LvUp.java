@@ -1,7 +1,6 @@
 public class LvUp {
-	private static Player player = Player.getIns();
 	
-	public boolean checkLvUp()
+	public boolean checkLvUp(Player player)
 	{
 		int tmp_exp = player.getExp();
 		int lv_exp = player.lvExp(player.getLv());
@@ -15,7 +14,7 @@ public class LvUp {
 			return false;
 	}
 	
-	public void lvUp()
+	public void lvUp(Player player)
 	{
 		int tmp_lv = player.getLv();
 		player.setLv(tmp_lv + 1);

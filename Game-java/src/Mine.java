@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Mine {
 	private static Scanner in = new Scanner(System.in);
 	
-	public void mine()
+	public int mine()
 	{
 		System.out.println("Selcect stage[1 ~ 10]");
 		System.out.print("Stage : ");
@@ -12,8 +12,6 @@ public class Mine {
 		
 		System.out.println("Press enter!!");
 		System.out.println("If wanna end - input exit");
-		System.out.println();
-		System.out.print("�ۡۡۡۡۡۡۡۡۡ�");
 		
 		int i = 0;
 		
@@ -37,16 +35,21 @@ public class Mine {
 			}
 		}
 		
-		if(i == stage)
-		{		
+		if(i == (stage * 10))
+		{	
+			System.out.println();
+			System.out.println("�ܡܡܡܡܡܡܡܡܡ�");
 			System.out.println("You success! ");
-			System.out.println("You get " + ( stage * 100 ) + "gold!");
+			System.out.println("Mine exit");
+			return (stage * 100);
 		}
+		
 		
 		{
 			System.out.println();
 			System.out.println("Mine exit");
 			System.out.println();
+			return 0;
 		}
 		
 	}

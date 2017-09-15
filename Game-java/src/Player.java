@@ -2,22 +2,23 @@ import java.util.Scanner;
 
 public class Player extends Stat{
 	
-	private Player(){}
-	
-	private static Player player = new Player();
-	
-	public static Player getIns()
-	{
-		if(player == null)
-		{
-			player = new Player();
-		}
-		
-		return player;
-	}
+//	private Player(){}
+//	
+//	private static Player player = new Player();
+//	
+//	public static Player getIns()
+//	{
+//		if(player == null)
+//		{
+//			player = new Player();
+//		}
+//		
+//		return player;
+//	}
 	
 	private String id;
 	private String pw;
+	private int gold = 0;
 	private static Scanner in = new Scanner(System.in);
 	
 	public void join()
@@ -132,5 +133,15 @@ public class Player extends Stat{
 	public void setExp(int exp)
 	{
 		super.exp = exp;
+	}
+	
+	public int getGold()
+	{
+		return this.gold;
+	}
+	
+	public void setGold(int gold)
+	{
+		this.gold += gold;
 	}
 }
